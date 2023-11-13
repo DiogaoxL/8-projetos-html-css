@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Projeto 08</title>
+</head>
+
+<body>
+  <section>
+
+    <div class="circle"></div>
+
+    <header>
+      <a href="#"><img src="assets/logobebida.png" class="logo"></a>
+
+
+      <div class="toggle" onclick="toggleMenu()">
+        <span class="hamburguer"></span>
+      </div>
+
+      <div class="menu">
+        <ul class="navigation">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Comprar</a></li>
+          <li><a href="#">Novidades</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <!--menu-->
+
+    </header>
+
+    <div class="content">
+      <div class="textbox">
+        <h2>Isso não é só uma bebida<br> Isso é <span id="marca">Coca-Cola</span> </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est itaque nihil voluptate, quod ullam
+          officiis a pariatur natus deserunt, dolor similique vitae rem provident necessitatibus commodi dolore,
+          repudiandae quo.</p>
+
+        <a href="#">Saiba mais</a>
+      </div>
+      <!--textbox-->
+
+
+      <div class="imgbox">
+        <img src="assets/coca cola.png" class="cocacola">
+      </div>
+
+    </div>
+    <!--content-->
+
+    <ul class="thumb">
+      <li><img src="assets/cocacolalogo.png"
+          onclick="imgSlider('assets/coca cola.png'); chanheCircleColor('red'); coca()"></li>
+      <li><img src="assets/fantalogo.png"
+          onclick="imgSlider('assets/fanta.png'); chanheCircleColor('orangered'); fanta()"></li>
+      <li><img src="assets/logogurana.png"
+          onclick="imgSlider('assets/guarana.png'); chanheCircleColor('green'); guarana()"></li>
+
+    </ul>
+
+    <ul class="socialmedia">
+      <li><a href="#"><img src="assets/facebook.png" alt=""></a></li>
+      <li><a href="#"><img src="assets/insta.png" alt=""></a></li>
+      <li><a href="#"><img src="assets/twitter.png" alt=""></a></li>
+
+    </ul>
+
+  </section>
+
+  <script>
+    function imgSlider(anything) {
+      document.querySelector('.cocacola').src = anything;
+
+
+    }
+
+    function chanheCircleColor(color) {
+      var circle = document.querySelector('.circle');
+      circle.style.background = color;
+    }
+
+    function fanta() {
+      document.getElementById("marca").textContent = "Fanta Laranja";
+      document.getElementById("marca").style.color = "orangered";
+
+    }
+
+    function coca() {
+      document.getElementById("marca").textContent = "Coca-Cola";
+      document.getElementById("marca").style.color = "red";
+
+    }
+
+    function guarana() {
+      document.getElementById("marca").textContent = "Guaraná";
+      document.getElementById("marca").style.color = "green";
+    }
+
+    function toggleMenu() {
+      var menuToggle = document.querySelector('.toggle');
+      var navigation = document.querySelector('.navigation');
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
